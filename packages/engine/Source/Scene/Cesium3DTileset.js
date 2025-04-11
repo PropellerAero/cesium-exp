@@ -2242,7 +2242,7 @@ function makeTile(tileset, baseResource, tileHeader, parentTile) {
     tileJson.children.push.apply(tileJson.children, children);
     tileJson.children.push.apply(
       tileJson.children,
-      defaultValue(tileHeader.children, EMPTY_ARRAY),
+      tileHeader.children ?? EMPTY_ARRAY,
     );
     tileJson.refine = "ADD";
     tileJson.geometricError = parentTile._geometricError;
